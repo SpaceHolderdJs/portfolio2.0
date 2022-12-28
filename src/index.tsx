@@ -7,8 +7,6 @@ import router from "modules/router/router";
 import { ThreeProvider } from "modules/three/ThreeContext";
 import { AudioProvider } from "modules/ui/components/Audio/AudioContext";
 
-//TODO:"homepage": "https://SpaceHolderdJs.github.io/portfolio2.0",
-
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
