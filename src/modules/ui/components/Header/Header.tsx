@@ -1,3 +1,4 @@
+import { styledDevicesAdaptive } from "modules/utils/responsive";
 import { FlexRow } from "../../Flex";
 import { AudioControl } from "../Audio/AudioControl";
 import { MobileAlert } from "../MobileAlert/MobileAlert";
@@ -13,7 +14,7 @@ export const Header = () => {
       alignItems="center"
       justifyContent="space-between">
       <AudioControl />
-      <FlexRow as="nav" p="20px">
+      <FlexRow as="nav" p={styledDevicesAdaptive.mobile("10px", "20px")}>
         {headerLinks.map(({ title, to }) => (
           <StyledLink key={to} to={to}>
             {title}

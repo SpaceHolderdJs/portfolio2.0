@@ -1,6 +1,7 @@
 import { FC, ReactNode } from "react";
 import styled from "styled-components";
 import { COLORS } from "./Flex";
+import { styledDevicesAdaptive } from "modules/utils/responsive";
 
 export const enum TEXT_TYPES {
   title = "TITLE",
@@ -8,9 +9,9 @@ export const enum TEXT_TYPES {
 }
 
 export enum TEXT_SIZES {
-  s = "12px",
-  l = "20px",
-  xl = "35px",
+  s = +styledDevicesAdaptive.mobile("10px", "12px"),
+  l = +styledDevicesAdaptive.mobile("15px", "20px"),
+  xl = +styledDevicesAdaptive.mobile("20px", "35px"),
 }
 
 export const enum TEXT_WEIGHTS {

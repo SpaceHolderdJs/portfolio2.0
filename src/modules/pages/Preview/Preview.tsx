@@ -7,22 +7,31 @@ import ReactTypingEffect from "react-typing-effect";
 import { technologyNames } from "./utils";
 import { appendAnimationProps } from "modules/utils/animation";
 import { useRouterSwithcer } from "modules/hooks/useRouterSwithcer";
+import { styledDevicesAdaptive } from "modules/utils/responsive";
 
 export const Preview = () => {
   useRouterSwithcer();
   return (
-    <FlexColumn w="100%" h="100%" alignItems="center">
+    <FlexColumn w="100%" h="100%" alignItems="center" className="container">
       <Header />
       <FlexColumn w="80%" h="100%" alignItems="center" justifyContent="center">
-        <StyledImg width={200} height={200} src="./photos/me3.jpg" alt="me" />
+        <StyledImg
+          width={+styledDevicesAdaptive.mobile("100", "200")}
+          height={+styledDevicesAdaptive.mobile("100", "200")}
+          src="./photos/me3.jpg"
+          alt="me"
+        />
         <FlexColumn
           gap="10px"
-          w="50%"
+          w={styledDevicesAdaptive.mobile("70%", "50%")}
           as="article"
           color={COLORS.ligthGreen}
           alignItems="center">
           <FlexRow justifyContent="center" {...appendAnimationProps}>
-            <Text type={TEXT_TYPES.title} size={TEXT_SIZES.xl}>
+            <Text
+              textAlign="center"
+              type={TEXT_TYPES.title}
+              size={TEXT_SIZES.xl}>
               Igor Sergienko [SpaceHolder], <br /> web dev since 2k19
             </Text>
           </FlexRow>

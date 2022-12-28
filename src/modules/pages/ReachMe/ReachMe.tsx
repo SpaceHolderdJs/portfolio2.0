@@ -13,7 +13,7 @@ export const ReachMe = () => {
   };
 
   return (
-    <FlexColumn w="100%" h="100%" alignItems="center">
+    <FlexColumn w="100%" h="100%" alignItems="center" className="container">
       <Header />
       <FlexColumn w="70%" h="100%" alignItems="center" justifyContent="center">
         {links.map(({ icon, link, title }, i) => (

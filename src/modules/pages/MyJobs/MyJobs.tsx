@@ -3,7 +3,7 @@ import { Header } from "modules/ui/components/Header/Header";
 import { FlexColumn, FlexRow } from "modules/ui/Flex";
 import jobsStore from "modules/store/jobsStore";
 import { JobModal } from "./styled";
-import { Text, TEXT_TYPES } from "modules/ui/Text";
+import { Text, TEXT_SIZES, TEXT_TYPES } from "modules/ui/Text";
 import { Buttton } from "modules/ui/Button";
 import { useCallback } from "react";
 import { motion } from "framer-motion";
@@ -12,6 +12,7 @@ import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FaRegHandPointer } from "react-icons/fa";
 import { useRouterSwithcer } from "modules/hooks/useRouterSwithcer";
+import { styledDevicesAdaptive } from "modules/utils/responsive";
 
 export const MyJobs = observer(() => {
   useRouterSwithcer();
@@ -31,7 +32,7 @@ export const MyJobs = observer(() => {
 
   const jobModal = (
     <JobModal
-      w="70%"
+      w={styledDevicesAdaptive.mobile("90%", "70%")}
       justifyContent="center"
       gap="10px"
       as={motion.div}
@@ -40,9 +41,20 @@ export const MyJobs = observer(() => {
         opacity: [0, 1],
       }}
       transition={{ duration: 1 }}>
-      <FlexRow w="100%" h="90%">
-        <FlexColumn w="60%" gap="10px">
-          <FlexRow w="100%" alignItems="center" justifyContent="space-between">
+      <FlexRow
+        w="100%"
+        h="90%"
+        alignItems="center"
+        flexDirection={styledDevicesAdaptive.mobile(
+          "column-reverse !important",
+          "row"
+        )}>
+        <FlexColumn w={styledDevicesAdaptive.mobile("100%", "60%")} gap="10px">
+          <FlexRow
+            w="100%"
+            alignItems="center"
+            justifyContent="space-between"
+            m="20px 0">
             <Text type={TEXT_TYPES.title}>
               {currentJob?.name} {currentJob?.duration}
             </Text>
@@ -54,7 +66,9 @@ export const MyJobs = observer(() => {
           <Text type={TEXT_TYPES.text}>
             Description: {currentJob?.description}
           </Text>
-          <Text type={TEXT_TYPES.text}>Position: {currentJob?.position}</Text>
+          <Text type={TEXT_TYPES.text} m="20px 0">
+            Position: {currentJob?.position}
+          </Text>
           {currentJob?.responsibilities && (
             <>
               <Text>Responsibilities:</Text>
@@ -69,8 +83,7 @@ export const MyJobs = observer(() => {
           )}
         </FlexColumn>
         <FlexColumn
-          w="35%"
-          h="100%"
+          w={styledDevicesAdaptive.mobile("100%", "35%")}
           justifyContent="center"
           alignItems="center"
           p="20px">
@@ -109,7 +122,9 @@ export const MyJobs = observer(() => {
           as={motion.div}
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 3, repeat: Infinity }}>
-          <Text>{`[hint]:`} Click on the circles</Text>
+          <Text size={TEXT_SIZES.s} textAlign="center">
+            {`[hint]:`} Click on the circles
+          </Text>
         </FlexRow>
       )}
     </FlexColumn>

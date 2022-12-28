@@ -1,4 +1,5 @@
 import { COLORS, FlexColumn } from "modules/ui/Flex";
+import { mobile } from "modules/utils/responsive";
 import styled from "styled-components";
 
 export const JobModal = styled(FlexColumn)`
@@ -11,4 +12,8 @@ export const JobModal = styled(FlexColumn)`
   img {
     border-radius: 20px;
   }
+
+  ${mobile(`
+    width: 95%;
+  `)}
 `;

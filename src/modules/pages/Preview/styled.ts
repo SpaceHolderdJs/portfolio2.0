@@ -26,6 +26,7 @@ export const StyledLinkWrapper = styled(FlexRow)`
     font-size: ${TEXT_SIZES.l};
     background: ${COLORS.ligthGreen};
     cursor: pointer;
+    border: none;
   }
 `;
 

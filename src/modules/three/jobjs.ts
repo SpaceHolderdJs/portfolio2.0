@@ -3,7 +3,7 @@ import { COLORS } from "modules/ui/Flex";
 import { jobs } from "modules/pages/MyJobs/utils";
 
 export const jobsPositions = [
-  { x: -15, y: 5, z: -20 },
+  { x: -4, y: 5, z: -20 },
   { x: 1.5, y: 10, z: -25 },
   { x: 15, y: 15, z: -30 },
   { x: -5, y: 20, z: -35 },

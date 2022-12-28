@@ -23,6 +23,7 @@ interface FlexProps {
   alignSelf?: string;
   justifySelf?: string;
   flexWrap?: string;
+  flexDirection?: string;
   gap?: string;
 }
 
@@ -38,7 +39,8 @@ const Flex = styled.div<FlexProps & DefaultElementProps>`
   align-self: ${(props) => props.alignSelf || "none"};
   justify-self: ${(props) => props.justifySelf || "none"};
   flex-wrap: ${(props) => props.flexWrap || "none"};
-  ${({ gap }) => gap && `gap: ${gap};`};
+  flex-direction: ${(props) => props.flexDirection || "row"}
+    ${({ gap }) => gap && `gap: ${gap};`};
   background: ${({ bg }) => bg || "none"};
 `;
 
