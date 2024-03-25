@@ -9,7 +9,7 @@ import {
 import { ReachMe } from 'modules/pages/ReachMe/ReachMe';
 
 export const routes = [
-  { path: '/', element: <Navigate to="preview" /> },
+  { path: '/', element: <Preview /> },
   { path: 'preview', element: <Preview /> },
   { path: 'me', element: <Me /> },
   { path: 'myJobs', element: <MyJobs /> },
