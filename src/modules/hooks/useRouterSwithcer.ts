@@ -1,7 +1,7 @@
-import { ThreeContext } from "modules/three/ThreeContext";
-import pagesSwitcher from "modules/three/pagesSwitcher";
-import { useEffect, useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { ThreeContext } from 'modules/three/ThreeContext';
+import pagesSwitcher from 'modules/three/pagesSwitcher';
+import { useEffect, useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const useRouterSwithcer = () => {
   const location = useLocation();

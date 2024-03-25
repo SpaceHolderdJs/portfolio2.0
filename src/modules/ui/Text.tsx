@@ -1,22 +1,22 @@
-import { FC, ReactNode } from "react";
-import styled from "styled-components";
-import { COLORS } from "./Flex";
+import { FC, ReactNode } from 'react';
+import styled from 'styled-components';
+import { COLORS } from './Flex';
 
 export const enum TEXT_TYPES {
-  title = "TITLE",
-  text = "TEXT",
+  title = 'TITLE',
+  text = 'TEXT',
 }
 
 export enum TEXT_SIZES {
-  s = "12px",
-  l = "20px",
-  xl = "35px",
+  s = '15px',
+  l = '20px',
+  xl = '35px',
 }
 
 export const enum TEXT_WEIGHTS {
-  tiny = "200",
-  bold = "600",
-  bolder = "900",
+  tiny = '200',
+  bold = '600',
+  bolder = '900',
 }
 
 interface Props {
@@ -35,7 +35,7 @@ const StyledTitle = styled.h2<Props>`
   font-weight: ${({ weight }) => weight || TEXT_WEIGHTS.bold};
   color: ${({ color }) => color || COLORS.ligthGreen};
   margin: ${({ m }) => m || 10};
-  text-align: ${({ textAlign }) => textAlign || "start"};
+  text-align: ${({ textAlign }) => textAlign || 'start'};
 `;
 
 const StyledText = styled.span<Props>`
@@ -43,7 +43,8 @@ const StyledText = styled.span<Props>`
   color: ${({ color }) => color || COLORS.ligthGreen};
   font-weight: ${({ weight }) => weight || TEXT_WEIGHTS.bold};
   margin: ${({ m }) => m || 10};
-  text-align: ${({ textAlign }) => textAlign || "start"};
+  text-align: ${({ textAlign }) => textAlign || 'start'};
+  line-height: 30px;
 `;
 
 export const Text: FC<Props> = ({
@@ -52,7 +53,7 @@ export const Text: FC<Props> = ({
   weight = TEXT_WEIGHTS.bold,
   size = TEXT_SIZES.l,
   children = null,
-  className = "",
+  className = '',
   m,
   textAlign,
 }) => {

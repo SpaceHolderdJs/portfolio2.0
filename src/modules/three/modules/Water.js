@@ -11,7 +11,7 @@ import {
   Vector3,
   Vector4,
   WebGLRenderTarget,
-} from "three";
+} from 'three';
 
 /**
  * Work based on :
@@ -76,8 +76,8 @@ class Water extends Mesh {
 
     const mirrorShader = {
       uniforms: UniformsUtils.merge([
-        UniformsLib["fog"],
-        UniformsLib["lights"],
+        UniformsLib['fog'],
+        UniformsLib['lights'],
         {
           normalSampler: { value: null },
           mirrorSampler: { value: null },
@@ -202,17 +202,17 @@ class Water extends Mesh {
       fog: fog,
     });
 
-    material.uniforms["mirrorSampler"].value = renderTarget.texture;
-    material.uniforms["textureMatrix"].value = textureMatrix;
-    material.uniforms["alpha"].value = alpha;
-    material.uniforms["time"].value = time;
-    material.uniforms["normalSampler"].value = normalSampler;
-    material.uniforms["sunColor"].value = sunColor;
-    material.uniforms["waterColor"].value = waterColor;
-    material.uniforms["sunDirection"].value = sunDirection;
-    material.uniforms["distortionScale"].value = distortionScale;
+    material.uniforms['mirrorSampler'].value = renderTarget.texture;
+    material.uniforms['textureMatrix'].value = textureMatrix;
+    material.uniforms['alpha'].value = alpha;
+    material.uniforms['time'].value = time;
+    material.uniforms['normalSampler'].value = normalSampler;
+    material.uniforms['sunColor'].value = sunColor;
+    material.uniforms['waterColor'].value = waterColor;
+    material.uniforms['sunDirection'].value = sunDirection;
+    material.uniforms['distortionScale'].value = distortionScale;
 
-    material.uniforms["eye"].value = eye;
+    material.uniforms['eye'].value = eye;
 
     scope.material = material;
 

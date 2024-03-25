@@ -4,7 +4,7 @@ import {
   Float32BufferAttribute,
   Vector2,
   Vector3,
-} from "three";
+} from 'three';
 
 /**
  * Break faces with edges longer than maxEdgeLength
@@ -231,24 +231,24 @@ class TessellateModifier {
     const geometry2 = new BufferGeometry();
 
     geometry2.setAttribute(
-      "position",
+      'position',
       new Float32BufferAttribute(positions2, 3)
     );
 
     if (hasNormals) {
-      geometry2.setAttribute("normal", new Float32BufferAttribute(normals2, 3));
+      geometry2.setAttribute('normal', new Float32BufferAttribute(normals2, 3));
     }
 
     if (hasColors) {
-      geometry2.setAttribute("color", new Float32BufferAttribute(colors2, 3));
+      geometry2.setAttribute('color', new Float32BufferAttribute(colors2, 3));
     }
 
     if (hasUVs) {
-      geometry2.setAttribute("uv", new Float32BufferAttribute(uvs2, 2));
+      geometry2.setAttribute('uv', new Float32BufferAttribute(uvs2, 2));
     }
 
     if (hasUV2s) {
-      geometry2.setAttribute("uv2", new Float32BufferAttribute(uv2s2, 2));
+      geometry2.setAttribute('uv2', new Float32BufferAttribute(uv2s2, 2));
     }
 
     return geometry2;
